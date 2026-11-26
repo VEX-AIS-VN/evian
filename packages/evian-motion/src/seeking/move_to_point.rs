@@ -98,7 +98,7 @@ where
             distance_error *= -1.0;
         }
 
-        let angular_output = this.lateral_controller.update(projected_cte, 0.0, dt);
+        let angular_output = -this.lateral_controller.update(projected_cte, 0.0, dt);
         let linear_output = this.linear_controller.update(-distance_error, 0.0, dt) * angle_error.cos().abs();
 
         drop(

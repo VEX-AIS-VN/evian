@@ -101,7 +101,7 @@ where
             0.0
         } else {
             this.angular_controller
-                .update(-angular_error, Angle::ZERO, dt)
+                .update(angular_error, Angle::ZERO, dt)
         };
         let linear_output =
             this.linear_controller.update(-linear_error, 0.0, dt) * angular_error.cos();
